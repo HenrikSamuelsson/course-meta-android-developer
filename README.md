@@ -1,2 +1,3 @@
-# course-meta-android-developer
-Material from when taking courses to gain the Meta Android Developer Professional Certificate. 
+# Meta Android Developer Professional Certification
+
+Material from when taking courses to qualify for the Meta Android Developer Professional Certificate.
