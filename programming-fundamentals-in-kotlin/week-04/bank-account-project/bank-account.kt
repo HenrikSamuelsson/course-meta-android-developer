@@ -28,42 +28,67 @@ fun main() {
     println("You have created a ${accountType} account.")
 
     var accountBalance = (0..1000).random() 
-
     println("The current balance is ${accountBalance} dollars.") 
 
     val money = (0..1000).random() 
     println("The amount you transferred is ${money} dollars.") 
 
-    // Step 2 
     var output = 0 
-     
-    // Step 4 
+    
+    // Withdraw
+    fun withdraw(amount: Int): Int {
+        accountBalance -= amount
+        println("You successfully withdrew ${amount} dollars. The current balance is ${accountBalance} dollars.")
+        return amount
+    }
+    
     output = withdraw(money) 
     println("The amount you withdrew is ${output} dollars.") 
 
-    // Step 6 
+    
+    // Debit Withdraw
+    fun debitWithdraw(amount: Int): Int {
+        if (accountBalance == 0) {
+            println("Can't withdraw, no money on this account!")
+            return accountBalance
+        } else if (amount > accountBalance) {
+            println("Not enough money on this account! The current balance is ${accountBalance} dollars.")
+            return 0
+        } else {
+            return withdraw(amount)
+        }
+    }
+    
     output = debitWithdraw(money) 
     println("The amount you withdrew is ${output} dollars.") 
 
-    // Step 7 
+    // Deposit
     fun deposit(amount: Int): Int { 
         accountBalance += amount 
         println("You successfully deposited ${amount} dollars. The current balance is ${accountBalance} dollars.") 
         return amount 
-    } 
- 
-
-    // Step 8 
-
+    }
+    
     output = deposit(money) 
     println("The amount you deposited is ${output} dollars.") 
 
- 
-    // Step 10 
+    // Credit Deposit
+    fun creditDeposit(amount: Int): Int {
+        if (accountBalance == 0) {
+            println("This account is completely paid off! Do not deposit money!")
+            return accountBalance
+        } else if (accountBalance + amount > 0) {
+            println("Deposit failed, you tried to pay off an amount greater than the credit balance. The current balance is ${accountBalance} dollars.")
+            return 0
+        } else if (amount == -accountBalance) {
+            accountBalance = 0
+            println("You have paid off this account!")
+            return amount
+        } else {
+            return deposit(amount)
+        }
+    }
+    
     output = creditDeposit(money) 
     println("The amount you deposited is ${output} dollars.") 
-
- 
-
- 
 }
