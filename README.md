@@ -1,6 +1,6 @@
 # Meta Android Developer Professional Certification
 
-Material from when taking courses to qualify for the [Meta Android Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-android-developer).
+Material from when taking online courses to qualify for the [Meta Android Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-android-developer), authorized by Meta and offered through Coursera.
 
 ## Courses
 
